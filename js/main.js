@@ -1,6 +1,6 @@
 // Variables
 const output = document.querySelector('#output');
-const interval = 1200;
+const interval = 3200;
 let dataParsed;
 let isFirstIteration = true;
 // Fetch data from API

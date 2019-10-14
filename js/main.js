@@ -12,7 +12,8 @@ async function getData() {
   output.innerHTML = `
     LAT: ${dataParsed.latitude.toFixed(4)} <br /> LON: ${dataParsed.longitude.toFixed(4)} <br />
     ALT: ${parseFloat(dataParsed.altitude).toFixed(2)}<tt>KM</tt> <br/>
-    <strong>VISIBILITY:</strong> ${dataParsed.visibility}`;
+    <span style="color:#99ff99";>VELOCITY: ${parseFloat(dataParsed.velocity).toFixed(2)}<tt></span>KMh</tt> <br/>
+    <span style="color:#9999ff";>VISIBILITY:</span> ${dataParsed.visibility}`;
   marker.setLatLng([dataParsed.latitude, dataParsed.longitude]);
   
 }

@@ -1,6 +1,6 @@
 // Variables
 const output = document.querySelector('#output');
-const interval = 1200;
+const interval = 2200;
 let dataParsed;
 let isFirstIteration = true;
 // Fetch data from API
@@ -9,7 +9,10 @@ async function getData() {
   const baseAPI = "https://api.wheretheiss.at/v1/satellites/25544";
   data = await fetch(baseAPI);
   dataParsed = await data.json();
-  output.innerHTML = `LAT: ${dataParsed.latitude.toFixed(2)} | LON ${dataParsed.longitude.toFixed(2)} | ${parseFloat(dataParsed.velocity).toFixed(2)}<tt>KM/h</tt>`;
+  output.innerHTML = `
+    LAT: ${dataParsed.latitude.toFixed(4)} <br /> LON: ${dataParsed.longitude.toFixed(4)} <br />
+    ALT: ${parseFloat(dataParsed.altitude).toFixed(2)}<tt>KM</tt> <br/>
+    <strong>VISIBILITY:</strong> ${dataParsed.visibility}`;
   marker.setLatLng([dataParsed.latitude, dataParsed.longitude]);
   
 }
